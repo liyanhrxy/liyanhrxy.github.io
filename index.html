@@ -18,8 +18,8 @@
   
     
     
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
+  <script src="lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="lib/pace/pace-theme-mac-osx.min.css?v=1.0.2" rel="stylesheet">
 
 
 
@@ -47,7 +47,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
 
 
 
@@ -55,27 +55,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+<link href="css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
 
 
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
 
 
-  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
 
 
 
 
-
-  <meta name="keywords" content="Dreams is waht makes you happy, even when you are just trying" />
+  <meta name="keywords" content="go java linux eos ethereum" />
 
 
 
@@ -107,10 +101,10 @@
     root: '/',
     scheme: 'Mist',
     version: '5.1.4',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"always","offset":12,"b2t":true,"scrollpercent":true,"onmobile":false},
     fancybox: true,
     tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
     duoshuo: {
       userId: '0',
       author: 'Author'
@@ -154,6 +148,9 @@
 
 
 </head>
+<script type="text/javascript" src="/lib/clipboard/clipboard.js"></script>
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -170,7 +167,7 @@
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
+  <div class="site-meta custom-logo">
     
 
     <div class="custom-logo-site-title">
@@ -202,7 +199,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -212,7 +209,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -222,7 +219,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -232,7 +229,7 @@
       
         
         <li class="menu-item menu-item-categories">
-          <a href="/categories/" rel="section">
+          <a href="" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
             
@@ -242,7 +239,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -252,7 +249,7 @@
       
         
         <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
+          <a href="" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
             
@@ -262,7 +259,7 @@
       
         
         <li class="menu-item menu-item-commonweal">
-          <a href="/404/" rel="section">
+          <a href="" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
             
@@ -289,26 +286,22 @@
   
     <div class="site-search">
       
-  
-  <div class="algolia-popup popup search-popup">
-    <div class="algolia-search">
-      <div class="algolia-search-input-icon">
-        <i class="fa fa-search"></i>
-      </div>
-      <div class="algolia-search-input" id="algolia-search-input"></div>
-    </div>
-
-    <div class="algolia-results">
-      <div id="algolia-stats"></div>
-      <div id="algolia-hits"></div>
-      <div id="algolia-pagination" class="algolia-pagination"></div>
-    </div>
-
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
     <span class="popup-btn-close">
       <i class="fa fa-times-circle"></i>
     </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
   </div>
-
+  <div id="local-search-result"></div>
+</div>
 
 
 
@@ -341,7 +334,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liyanhrxy.github.io/2018/10/14/hello-world/">
+    <link itemprop="mainEntityOfPage" href="https://liyanhrxy.github.io2018/10/14/hello-world/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sweepmonkli">
@@ -360,7 +353,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/10/14/hello-world/" itemprop="url">Hello World</a></h2>
+                <a class="post-title-link" href="2018/10/14/hello-world/" itemprop="url">Hello World</a></h2>
         
 
         <div class="post-meta">
@@ -378,7 +371,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-10-14T23:02:38+08:00">
+                2018-10-14
+              </time>
             
           </span>
 
@@ -390,7 +395,7 @@
 
           
           
-             <span id="/2018/10/14/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
+             <span id="2018/10/14/hello-world/" class="leancloud_visitors" data-flag-title="Hello World">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -416,7 +421,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  
+                  73
                 </span>
               
 
@@ -432,7 +437,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  
+                  1
                 </span>
               
             </div>
@@ -515,7 +520,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://liyanhrxy.github.io/2015/10/15/Linux/">
+    <link itemprop="mainEntityOfPage" href="https://liyanhrxy.github.io2015/10/15/Linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="sweepmonkli">
@@ -534,7 +539,7 @@
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2015/10/15/Linux/" itemprop="url">Linux</a></h2>
+                <a class="post-title-link" href="2015/10/15/Linux/" itemprop="url">Linux</a></h2>
         
 
         <div class="post-meta">
@@ -552,7 +557,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified&#58;</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-10-15T15:36:39+08:00">
+                2018-10-15
+              </time>
             
           </span>
 
@@ -564,7 +581,7 @@
 
           
           
-             <span id="/2015/10/15/Linux/" class="leancloud_visitors" data-flag-title="Linux">
+             <span id="2015/10/15/Linux/" class="leancloud_visitors" data-flag-title="Linux">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -590,7 +607,7 @@
                   <span class="post-meta-item-text">Words count in article&#58;</span>
                 
                 <span title="Words count in article">
-                  
+                  4.4k
                 </span>
               
 
@@ -606,7 +623,7 @@
                   <span class="post-meta-item-text">Reading time &asymp;</span>
                 
                 <span title="Reading time">
-                  
+                  19
                 </span>
               
             </div>
@@ -637,13 +654,13 @@
 <blockquote>
 <p>cnetos 7 </p>
 <ul>
-<li>安装gcc6+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install centos-release-scl</span><br><span class="line">sudo yum install devtoolset-7-gcc-c++</span><br><span class="line">echo &apos;source /opt/rh/devtoolset-7/enable&apos; &gt;&gt; ~/.bashrc</span><br><span class="line">which gcc</span><br><span class="line">gcc --version</span><br></pre></td></tr></table></figure>
+<li>安装gcc6+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> centos-<span class="keyword">release</span>-scl</span><br><span class="line">sudo yum <span class="keyword">install</span> devtoolset<span class="number">-7</span>-gcc-c++</span><br><span class="line">echo <span class="string">'source /opt/rh/devtoolset-7/enable'</span> &gt;&gt; ~/.bashrc</span><br><span class="line">which gcc</span><br><span class="line">gcc <span class="comment">--version</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
 <ul>
 <li><p>添加SHELL的TAB补全</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Debian/Ubuntu</span><br><span class="line">$ apt-get install bash-completion</span><br><span class="line"></span><br><span class="line">Centos</span><br><span class="line">$ yum install bash-completion</span><br><span class="line"></span><br><span class="line">MAC</span><br><span class="line">$ brew install bash-completion</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">Debian</span>/Ubuntu</span><br><span class="line">$ apt-<span class="meta">get</span> install <span class="keyword">bash-completion</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">Centos</span></span><br><span class="line"><span class="keyword">$ </span>yum install <span class="keyword">bash-completion</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">MAC</span></span><br><span class="line"><span class="keyword">$ </span><span class="keyword">brew </span>install <span class="keyword">bash-completion</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>centos7安装alien 转换.deb —&gt;.rpm</p>
 <ul>
@@ -684,38 +701,38 @@
 <p><code>cmd + q 退出当前窗口</code></p>
 <p><code>history | grep  xxx 查看相关命令历史</code></p>
 <p><code>history -c 清除Linux历史命令</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pv (pipe-view) 查看命令执行的进度</span><br><span class="line"></span><br><span class="line">1. 监视打开/拷贝文件进度</span><br><span class="line">pv /media/himanshu/1AC2-A8E3/fNf.mkv &gt; ./Desktop/fnf.mkv</span><br><span class="line">-p 显示进度</span><br><span class="line">-t 显示时间</span><br><span class="line">-n 显示整数百分比</span><br><span class="line">-r 速率</span><br><span class="line">-e 估计剩余的时间</span><br><span class="line">-L 修改传输速率 pv -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv &gt; ./Desktop/fnf.mkv</span><br><span class="line"></span><br><span class="line">2. 监视压缩文件进度</span><br><span class="line">pv /media/himanshu/1AC2-A8E3/fnf.mkv | gzip &gt; ./Desktop/fnf.log.gz</span><br><span class="line"></span><br><span class="line">3. 监视数据内容搜索进度 pv -L 5k pvtest.dat | wc</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pv (pipe-view) 查看命令执行的进度</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 监视打开/拷贝文件进度</span><br><span class="line">pv <span class="regexp">/media/</span>himanshu<span class="regexp">/1AC2-A8E3/</span>fNf.mkv &gt; .<span class="regexp">/Desktop/</span>fnf.mkv</span><br><span class="line">-p 显示进度</span><br><span class="line">-t 显示时间</span><br><span class="line">-n 显示整数百分比</span><br><span class="line">-r 速率</span><br><span class="line">-e 估计剩余的时间</span><br><span class="line">-L 修改传输速率 pv -L <span class="number">2</span>m <span class="regexp">/media/</span>himanshu<span class="regexp">/1AC2-A8E3/</span>fNf.mkv &gt; .<span class="regexp">/Desktop/</span>fnf.mkv</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 监视压缩文件进度</span><br><span class="line">pv <span class="regexp">/media/</span>himanshu<span class="regexp">/1AC2-A8E3/</span>fnf.mkv | gzip &gt; .<span class="regexp">/Desktop/</span>fnf.log.gz</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 监视数据内容搜索进度 pv -L <span class="number">5</span>k pvtest.dat | wc</span><br></pre></td></tr></table></figure>
 <p><code>ln  源文件  软连接名称</code></p>
 <p><code>set nu!  vim中显示行号</code></p>
 <p><code>远程登录服务器： ssh root@192.168.112.66</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 命令行</span><br><span class="line">ctrl+k:清除光标后至行尾的内容</span><br><span class="line">ctrl+u: 清除光标前至行首间的所有内容</span><br><span class="line">ctrl+a:光标移到行首</span><br><span class="line">ctrl+e:光标移到行尾。</span><br><span class="line">cmd + k 保留光标所在行，其余删除</span><br></pre></td></tr></table></figure>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 命令行</span></span><br><span class="line">ctrl+<span class="string">k:</span>清除光标后至行尾的内容</span><br><span class="line">ctrl+<span class="string">u:</span> 清除光标前至行首间的所有内容</span><br><span class="line">ctrl+<span class="string">a:</span>光标移到行首</span><br><span class="line">ctrl+<span class="string">e:</span>光标移到行尾。</span><br><span class="line">cmd + k 保留光标所在行，其余删除</span><br></pre></td></tr></table></figure>
 <p><code>cd - 返回上次访问的目录</code></p>
 <p><code>df  可以获取硬盘被占用了多少空间，目前还剩下多少空间等信息</code></p>
 <p><code>查看磁盘空间 df -h</code></p>
 <p><code>查看目录大小 du -sh</code><br><code>du 查看指定文件，文件夹所占用的磁盘空间</code></p>
 <p><code>fdisk 分区</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lsof命令可以列出当前的所有网络情况， 此命令的解释如下：</span><br><span class="line"> -n 表示主机以ip地址显示 </span><br><span class="line">-P 表示端口以数字形式显示，默认为端口名称 </span><br><span class="line">-i 意义较多，具体 man lsof, 主要是用来过滤lsof的输出结果 -s 和 -i 配合使用，用于过滤输出</span><br><span class="line">lsof | grep port  :查看占用端口的程序</span><br><span class="line">lsof -i:80  查看占用80端口的进程</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">pkill 进程名</span><br><span class="line">killall 进程名称</span><br><span class="line">查看实时资源占用：top  M(内存倒序) P(CPU倒序)</span><br><span class="line"></span><br><span class="line">查看连接某服务端口最多的的IP地址 netstat -ntu | grep :80 | awk &apos;&#123;print $5&#125;&apos; | cut -d: -f1 | awk &apos;&#123;++ip[$1]&#125; END &#123;for(i in ip) print ip[i],&quot;\t&quot;,i&#125;&apos; | sort -nr</span><br><span class="line"></span><br><span class="line">netstat s |egrep &quot;listen&quot; :查看tcp全连接队列的溢出情况</span><br><span class="line">溢出后，系统如何处理：</span><br><span class="line">cat /proc/sys/net/ipv4/tcp_abort_on_overflow</span><br><span class="line">tcp_abort_on_overflow 为0表示如果三次握手第三步的时候全连接队列满了那么server扔掉client发过来的ack(在server端认为链接还没有建立起来)</span><br><span class="line">为1 表示第三步的时候如果全接队列满了，server发送一个reset包给client，表示废弃这个握手过程</span><br><span class="line">ss 显示处于活动状态的套接字信息</span><br><span class="line">ss -lnt : l(listen) n(不解析服务器名称) t(tcp)</span><br><span class="line">[MaX4[MaX4[MaX4[MaX4</span><br><span class="line">[MaX4[MaX4netstat -antp | grep 端口号(此端口号运行的进程)+ 进程名称(此进程占用的端口号)</span><br><span class="line">[MaX4ps aux/-ef |grep   xxx  查看进程占用的端口号</span><br><span class="line">[MaX4[MaX4ps aux  | grep xxx | grep -v grep |  xargs（将输入转化为后面命令的参数） kill -9  ===   kill -9 ` ps -aux |grep xxx |grep -v grep | awk &apos;&#123;print $2&#125;&apos; `</span><br><span class="line">[MaX4grep -v  x&apos;x&apos;x   不包含x&apos;x&apos;x 的结果 </span><br><span class="line">pgrep 通过程序的名字来查询进程</span><br><span class="line">egrep 在指定文件中查找指定字符串</span><br><span class="line">xargs还有指定参数位置的作用。假设我们要将目录下所有的.py文件放到Python目录中去，可以使用命令</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find . -name &apos;*.py&apos; | xargs -I &#123;&#125; mv &#123;&#125; ./Python</span><br><span class="line">参数-I指定了管道前命令作为参数所应该在管道后面命令的位置</span><br><span class="line"></span><br><span class="line">find / -name   filename  查看文件路径</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">跨服务器传输文件 SCP</span><br><span class="line">scp [参数] [文件原路径] [目标路径]</span><br><span class="line">- 远程 - 本地  scp root@ip:/path     /localpath</span><br><span class="line"></span><br><span class="line">- 本地 -- 远程 scp localpath   root@ip:/path</span><br><span class="line">rsync</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">telnet ip   port(没有:)</span><br><span class="line">nc（netcat）:</span><br><span class="line">- 端口扫描</span><br><span class="line">nc -z -v -n 127.0.0.1 21-25</span><br><span class="line">-z :连接成功后立即关闭连接，不进行数据交换</span><br><span class="line">-v : 详细输出</span><br><span class="line">-n :不使用DNS解析(使用使用域名时，不加该参数</span><br><span class="line">-u : -u参数调整为udp,默认为TCP)</span><br><span class="line">网络请求工具：curl</span><br><span class="line">curl -X POST -H &apos;Expect:&apos; -d @aa.txt http://192.168.101.7:52433/com.xxx.api.LoanApplyService:1.0.0/loanApply</span><br><span class="line"># --header &apos;Expect:&apos;会去掉curl对参数长度1024的限制</span><br><span class="line"># -d@aa.txt  指定使用aa.txt中的内容作为参数</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">后台启动：nohup ` 应用启动命令` &amp;</span><br><span class="line">bg , fg , ctrl +z , jobs :（见图bg fg.png）</span><br><span class="line">ctrl +z ： 把当前进程挂起</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew（mac）  yum(linux)  wget(centos)  apt-get(ubantu) :应用下载工具</span><br><span class="line">rpm -ivh 安装</span><br><span class="line">rpm -Uvh 更新</span><br><span class="line">rpm -e  卸载</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar -cvf  压缩</span><br><span class="line">tar -xvf 解压</span><br><span class="line">unzip</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat/tac  </span><br><span class="line">head/tail -f  从头/尾 查看   -f 实时查看</span><br><span class="line">more/less 分页</span><br></pre></td></tr></table></figure>
-<p><code>ln  创建链接</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim/vi  编辑器</span><br><span class="line">touch  新建空白文件</span><br><span class="line">-r  递归</span><br><span class="line">-f  强制 --force</span><br><span class="line">-a  all</span><br><span class="line">-h  友好格式 </span><br><span class="line">-v  显示详情 --view</span><br><span class="line">-l list</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lsof命令可以列出当前的所有网络情况， 此命令的解释如下：</span><br><span class="line"> -n 表示主机以ip地址显示 </span><br><span class="line">-P 表示端口以数字形式显示，默认为端口名称 </span><br><span class="line">-i 意义较多，具体 man lsof, 主要是用来过滤lsof的输出结果 -s 和 -i 配合使用，用于过滤输出</span><br><span class="line">lsof | grep<span class="built_in"> port </span> :查看占用端口的程序</span><br><span class="line">lsof -i:80  查看占用80端口的进程</span><br></pre></td></tr></table></figure>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">pkill 进程名</span><br><span class="line">killall 进程名称</span><br><span class="line">查看实时资源占用：top  M(内存倒序) P(CPU倒序)</span><br><span class="line"></span><br><span class="line">查看连接某服务端口最多的的IP地址 netstat -ntu | grep :<span class="number">80</span> | awk <span class="string">'&#123;print $5&#125;'</span> | cut -d: -f1 | awk <span class="string">'&#123;++ip[$1]&#125; END &#123;for(i in ip) print ip[i],"\t",i&#125;'</span> | sort -nr</span><br><span class="line"></span><br><span class="line">netstat s |egrep <span class="string">"listen"</span> :查看tcp全连接队列的溢出情况</span><br><span class="line">溢出后，系统如何处理：</span><br><span class="line">cat /<span class="keyword">proc</span>/sys/net/ipv4/tcp_abort_on_overflow</span><br><span class="line">tcp_abort_on_overflow 为0表示如果三次握手第三步的时候全连接队列满了那么server扔掉client发过来的ack(在server端认为链接还没有建立起来)</span><br><span class="line">为1 表示第三步的时候如果全接队列满了，server发送一个reset包给client，表示废弃这个握手过程</span><br><span class="line">ss 显示处于活动状态的套接字信息</span><br><span class="line">ss -lnt :<span class="title"> l(listen)</span> n(不解析服务器名称)<span class="title"> t(tcp)</span></span><br><span class="line"><span class="title">[MaX4[MaX4[MaX4[MaX4</span></span><br><span class="line"><span class="title">[MaX4[MaX4netstat</span> -antp |<span class="title"> grep</span> 端口号(此端口号运行的进程)+ 进程名称(此进程占用的端口号)</span><br><span class="line">[MaX4ps<span class="title"> aux/-ef</span> |grep<span class="title">   xxx</span>  查看进程占用的端口号</span><br><span class="line">[MaX4[MaX4ps<span class="title"> aux</span>  |<span class="title"> grep</span> xxx |<span class="title"> grep</span> -v<span class="title"> grep</span> |<span class="title">  xargs（将输入转化为后面命令的参数）</span> kill -9  ===<span class="title">   kill</span> -9 `<span class="title"> ps</span> -aux |grep<span class="title"> xxx</span> |grep -v<span class="title"> grep</span> |<span class="title"> awk</span> '&#123;print $<span class="number">2</span>&#125;<span class="string">' `</span></span><br><span class="line"><span class="string">[MaX4grep -v  x'</span>x<span class="string">'x   不包含x'</span>x<span class="string">'x 的结果 </span></span><br><span class="line"><span class="string">pgrep 通过程序的名字来查询进程</span></span><br><span class="line"><span class="string">egrep 在指定文件中查找指定字符串</span></span><br><span class="line"><span class="string">xargs还有指定参数位置的作用。假设我们要将目录下所有的.py文件放到Python目录中去，可以使用命令</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">find . -name <span class="string">'*.py'</span> | xargs -<span class="keyword">I</span> &#123;&#125; mv &#123;&#125; ./Python</span><br><span class="line">参数-<span class="keyword">I</span>指定了管道前命令作为参数所应该在管道后面命令的位置</span><br><span class="line"></span><br><span class="line">find / -name   filename  查看文件路径</span><br></pre></td></tr></table></figure>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">跨服务器传输文件 SCP</span><br><span class="line">scp [参数] [文件原路径] [目标路径]</span><br><span class="line">-<span class="ruby"> 远程 - 本地  scp root@ip<span class="symbol">:/path</span>     /localpath</span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line"><span class="ruby">- 本地 -- 远程 scp localpath   root@ip<span class="symbol">:/path</span></span></span><br><span class="line"><span class="ruby">rsync</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">telnet</span> ip   port(没有:)</span><br><span class="line">nc（netcat）:</span><br><span class="line">- 端口扫描</span><br><span class="line">nc -z -v -n <span class="number">127.0.0.1</span> <span class="number">21</span>-<span class="number">25</span></span><br><span class="line">-z :连接成功后立即关闭连接，不进行数据交换</span><br><span class="line">-v : 详细输出</span><br><span class="line">-n :不使用DNS解析(使用使用域名时，不加该参数</span><br><span class="line">-u : -u参数调整为udp,默认为TCP)</span><br><span class="line">网络请求工具：curl</span><br><span class="line">curl -X POST -H <span class="string">'Expect:'</span> -d <span class="variable">@aa</span>.txt http://192.168.101.7:52433/com.xxx.api.LoanApplyService:1.0.0/loanApply</span><br><span class="line"># --header <span class="string">'Expect:'</span>会去掉curl对参数长度<span class="number">1024</span>的限制</span><br><span class="line"><span class="comment"># -d@aa.txt  指定使用aa.txt中的内容作为参数</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">后台启动：nohup ` 应用启动命令` &amp;</span><br><span class="line"><span class="built_in">bg</span> , <span class="built_in">fg</span> , ctrl +z , <span class="built_in">jobs</span> :（见图<span class="built_in">bg</span> fg.png）</span><br><span class="line">ctrl +z ： 把当前进程挂起</span><br></pre></td></tr></table></figure>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">brew（mac）  yum<span class="comment">(linux)</span>  wget<span class="comment">(centos)</span>  apt-get<span class="comment">(ubantu)</span> :应用下载工具</span><br><span class="line">rpm -ivh 安装</span><br><span class="line">rpm -Uvh 更新</span><br><span class="line">rpm -e  卸载</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">tar</span> -cvf  压缩</span><br><span class="line">tar -xvf 解压</span><br><span class="line">unzip</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span>/tac  </span><br><span class="line">head/tail -f  从头/尾 查看   -f 实时查看</span><br><span class="line"><span class="keyword">more</span>/less 分页</span><br></pre></td></tr></table></figure>
+<p><code>ln  创建链接</code><br><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim/vi  编辑器</span><br><span class="line">touch  新建空白文件</span><br><span class="line"><span class="deletion">-r  递归</span></span><br><span class="line"><span class="deletion">-f  强制 --force</span></span><br><span class="line"><span class="deletion">-a  all</span></span><br><span class="line"><span class="deletion">-h  友好格式 </span></span><br><span class="line"><span class="deletion">-v  显示详情 --view</span></span><br><span class="line"><span class="deletion">-l list</span></span><br></pre></td></tr></table></figure></p>
 <p><code>chmod  +r/w/x  filename</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mv  移动文件   同一文件夹下重命名</span><br><span class="line">rm  删除</span><br><span class="line">cp</span><br><span class="line">sort  排序</span><br><span class="line">unique  -c（count）</span><br><span class="line">mkdir  -p  创建多级文件夹</span><br><span class="line">sed  流式编辑器  &apos;行内编辑器&apos;</span><br><span class="line">awk  awk &apos;&#123;BEGIN&#123;cmd&#125; &#123;cmd&#125; END&#123;cmd&#125;&#125;&apos;</span><br><span class="line">wc  -l 统计行数 -w 统计字数 统计</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">防火墙配置</span><br><span class="line">firewall-cmd --state &apos;查看防火墙状态&apos;</span><br><span class="line">systemctl status firewalld.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">systemctl stop firewalld.service #停止firewall</span><br><span class="line">systemctl disable firewalld.service #禁止firewall开机启动</span><br><span class="line">iptables服务命令</span><br><span class="line">-- 启动服务</span><br><span class="line"># /etc/init.d/iptables start </span><br><span class="line"># service iptables start</span><br><span class="line"></span><br><span class="line">-- 停止服务</span><br><span class="line"># /etc/init.d/iptables stop</span><br><span class="line"># service iptables stop</span><br><span class="line"></span><br><span class="line">-- 重启服务</span><br><span class="line"># /etc/init.d/iptables restart</span><br><span class="line"># service iptables restart</span><br><span class="line"></span><br><span class="line">-- 保存设置</span><br><span class="line"># /etc/init.d/iptables save</span><br><span class="line"># service iptables save</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">2. 配置Filter表防火墙</span><br><span class="line">  1. 查看iptables的配置信息</span><br><span class="line"># iptables -L -n</span><br><span class="line"></span><br><span class="line">  1. 清除原有防火墙规则</span><br><span class="line">  ● 清除预设表filter中的所有规则链的规则</span><br><span class="line"># iptables -F </span><br><span class="line"></span><br><span class="line">  ● 清除预设表filter中使用者自定链中的规则</span><br><span class="line"># iptables -X</span><br><span class="line"></span><br><span class="line">  ● 保存防火墙设置</span><br><span class="line"># /etc/init.d/iptables save</span><br><span class="line">或</span><br><span class="line"># service iptables save</span><br><span class="line"></span><br><span class="line">  1. 设定预设规则</span><br><span class="line">-- 请求接入包丢弃</span><br><span class="line">[root@home ~]# iptables -p INPUT DROP</span><br><span class="line">-- 接受响应数据包</span><br><span class="line">[root@home ~]# iptables -p OUTPUT ACCEPT</span><br><span class="line">-- 转发数据包丢弃 </span><br><span class="line">[root@home ~]# iptables -p FORWARD DROP</span><br><span class="line"></span><br><span class="line">  1. 添加防火墙规则</span><br><span class="line">首先添加INPUT链,INPUT链的默认规则是DROP,所以我们就写需要ACCETP(通过)的链。</span><br><span class="line">  ● 开启SSH服务端口</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT </span><br><span class="line"></span><br><span class="line">注:如果在预设设置把OUTPUT设置成DROP策略的话，就需要设置OUTPUT规则，否则无法进行SSH连接。</span><br><span class="line">  ● 开启Web服务端口</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 开启邮件服务的25、110端口</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 110 -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 25 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 开启FTP服务的21端口</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 21 -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 20 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 开启DNS服务的53端口</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 53 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 设置icmp服务</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p icmp -j ACCEPT (OUTPUT设置成DROP的话)</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p icmp -j ACCEPT    (INPUT设置成DROP的话)</span><br><span class="line"></span><br><span class="line">[MaZ:[MaZ:[MaZ:[MaZ:[MaZ:  ● 允许loopback</span><br><span class="line">[MaZ:[MaZ:不然会导致DNS无法正常关闭等问题</span><br><span class="line">[MaZ:[root@tp ~]# IPTABLES -A INPUT -i lo -p all -j ACCEPT </span><br><span class="line">[MaZ:[MaZ:(如果是INPUT DROP)</span><br><span class="line">[MaZ:[root@tp ~]# IPTABLES -A OUTPUT -o lo -p all -j ACCEPT</span><br><span class="line">[MaZ:[MaZ:(如果是OUTPUT DROP)</span><br><span class="line">[MaZ:[MaZ:[MaZ:</span><br><span class="line">  ● 减少不安全的端口连接</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p tcp --sport 31337 -j DROP</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p tcp --dport 31337 -j DROP</span><br><span class="line"></span><br><span class="line">说明：有些特洛伊木马会扫描端口31337到31340(即黑客语言中的 elite 端口)上的服务。既然合法服务都不使用这些非标准端口来通信,阻塞这些端口能够有效地减少你的网络上可能被感染的机器和它们的远程主服务器进行独立通信的机会。此外，其他端口也一样,像:31335、27444、27665、20034 NetBus、9704、137-139（smb）,2049(NFS)端口也应被禁止。</span><br><span class="line">  ● 只允许某台主机或某个网段进行SSH连接</span><br><span class="line">只允许192.168.0.3的机器进行SSH连接</span><br><span class="line">[root@tp ~]# iptables -A INPUT -s 192.168.0.3 -p tcp --dport 22 -j ACCEPT</span><br><span class="line"></span><br><span class="line">如果允许或限制一段IP地址可用192.168.0.0/24表示192.168.0.1-255端的所有IP, 24表示子网掩码数。</span><br><span class="line">[root@tp ~]# iptables -A INPUT -s 192.168.0.0/24 -p tcp --dport 22 -j ACCEPT</span><br><span class="line"></span><br><span class="line">注意：指定某个主机或者某个网段进行SSH连接，需要在iptables配置文件中的-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT</span><br><span class="line">删除，因为它表示所有地址都可以登陆.</span><br><span class="line">如果只允许除了192.168.0.3的主机外都能进行SSH连接</span><br><span class="line">[root@tp ~]# iptables -A INPUT -s ! 192.168.0.3 -p tcp --dport 22 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 开启转发功能</span><br><span class="line">在做NAT网络配置时,FORWARD默认规则是DROP时,必须开启数据包转发功能</span><br><span class="line">[root@tp ~]# iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A FORWARD -i eth1 -o eh0 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 丢弃坏的TCP包</span><br><span class="line">[root@tp ~]#iptables -A FORWARD -p TCP ! --syn -m state --state NEW -j DROP</span><br><span class="line"></span><br><span class="line">  ● 处理IP碎片数量，防止DDOS攻击，允许每秒100个</span><br><span class="line">[root@tp ~]#iptables -A FORWARD -f -m limit --limit 100/s --limit-burst 100 -j ACCEPT</span><br><span class="line"></span><br><span class="line">[MaXA[MaXA[MaXA[MaXA[MaXA  ● 设置ICMP包过滤, 允许每秒1个包, 限制触发条件是10个包</span><br><span class="line">[MaXA[MaXA[root@tp ~]#iptables -A FORWARD -p icmp -m limit --limit 1/s --limit-burst 10 -j ACCEPT</span><br><span class="line">[MaXA</span><br><span class="line">[MaXA[MaXA  ● DROP非法连接</span><br><span class="line">[MaXA[root@tp ~]# iptables -A INPUT   -m state --state INVALID -j DROP</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT  -m state --state INVALID -j DROP</span><br><span class="line">[root@tp ~]# iptables -A FORWARD -m state --state INVALID -j DROP</span><br><span class="line"></span><br><span class="line">  ● 允许所有已经建立的和相关的连接</span><br><span class="line">[root@tp ~]# iptables-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables-A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line">[root@tp ~]# /etc/rc.d/init.d/iptables save</span><br><span class="line"></span><br><span class="line">3. 配置NAT表防火墙</span><br><span class="line">  1. 查看本机关于NAT的设置情况</span><br><span class="line">[root@tp rc.d]# iptables -t nat -L</span><br><span class="line"></span><br><span class="line">  1. 清除NAT规则</span><br><span class="line">[root@tp ~]# iptables -F -t nat</span><br><span class="line">[root@tp ~]# iptables -X -t nat</span><br><span class="line">[root@tp ~]# iptables -Z -t nat</span><br><span class="line"></span><br><span class="line">  1. 添加规则</span><br><span class="line">添加基本的NAT地址转换，添加规则时，我们只添加DROP链，因为默认链全是ACCEPT。</span><br><span class="line">  ● 防止外网用内网IP欺骗</span><br><span class="line">[root@tp sysconfig]# iptables -t nat -A PREROUTING -i eth0 -s 10.0.0.0/8 -j DROP</span><br><span class="line">[root@tp sysconfig]# iptables -t nat -A PREROUTING -i eth0 -s 172.16.0.0/12 -j DROP</span><br><span class="line">[root@tp sysconfig]# iptables -t nat -A PREROUTING -i eth0 -s 192.168.0.0/16 -j DROP</span><br><span class="line"></span><br><span class="line">  ● 禁止与211.101.46.253的所有连接</span><br><span class="line">[root@tp ~]# iptables -t nat -A PREROUTING -d 211.101.46.253 -j DROP</span><br><span class="line"></span><br><span class="line">  ● 禁用FTP(21)端口</span><br><span class="line">[root@tp ~]# iptables -t nat -A PREROUTING -p tcp --dport 21 -j DROP</span><br><span class="line"></span><br><span class="line">只禁用211.101.46.253地址的FTP连接,其他连接可以进行。</span><br><span class="line">[root@tp ~]# iptables -t nat -A PREROUTING -p tcp --dport 21 -d 211.101.46.253 -j DROP</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">//linux 命令行快捷键</span><br><span class="line">Ctrl-A 相当于HOME键，用于将光标定位到本行最前面</span><br><span class="line"></span><br><span class="line">Ctrl-E 相当于End键，即将光标移动到本行末尾</span><br><span class="line"></span><br><span class="line">Ctrl-B 相当于左箭头键，用于将光标向左移动一格</span><br><span class="line"></span><br><span class="line">Ctrl-F 相当于右箭头键，用于将光标向右移动一格</span><br><span class="line"></span><br><span class="line">Ctrl-D 相当于Del键，即删除光标所在处的字符</span><br><span class="line"></span><br><span class="line">Ctrl-K 用于删除从光标处开始到结尾处的所有字符</span><br><span class="line"></span><br><span class="line">Ctrl-L 清屏，相当于clear命令</span><br><span class="line"></span><br><span class="line">Ctrl-R 进入历史命令查找状态，然后你输入几个关键字符，就可以找到你使用过的命令</span><br><span class="line"></span><br><span class="line">Ctrl-U 用于删除从光标开始到行首的所有字符。一般在密码或命令输入错误时常用</span><br><span class="line"></span><br><span class="line">Ctrl-H 删除光标左侧的一个字符</span><br><span class="line"></span><br><span class="line">Ctrl-W 用于删除当前光标左侧的一个单词</span><br><span class="line"></span><br><span class="line">Ctrl-P 相当于上箭头键，即显示上一个命令</span><br><span class="line"></span><br><span class="line">Ctrl-N 相当于下箭头键，即显示下一个命令</span><br><span class="line"></span><br><span class="line">Ctrl-T 用于颠倒光标所在处字符和前一个字符的位置。（目前不知道有什么作用，哪位朋友知道？）</span><br><span class="line"></span><br><span class="line">Ctrl-J 相当于回车键</span><br><span class="line"></span><br><span class="line">[MaXA[MaXA[MaXA[MaXAAlt-. 用于提取历史命令中的最后一个单词。你先执行history命令，然后再敲击此快捷键若干下，你就懂了！</span><br><span class="line">[MaXA[MaXA[MaXA</span><br><span class="line">Alt-BackSpace 用于删除本行所有的内容，基本上和Ctrl-U类似。</span><br><span class="line">[MaXA</span><br><span class="line">Alt-C 用于将当前光标处的字符变成大写，同时本光标所在单词的后续字符都变成小写。</span><br><span class="line"></span><br><span class="line">Alt-L 用于将光标所在单词及所在单词的后续字符都变成小写。</span><br><span class="line"></span><br><span class="line">Alt-U 用于将光标所在单词的光标所在处及之后的所有字符变成大写。</span><br><span class="line"></span><br><span class="line">$(linux 命令) 得到命令的执行结果，可以作为其他命令的参数</span><br><span class="line">[M`XA[M`XA[M`XA[M`XA</span><br><span class="line">[M`XA[M`XA[M`XA[M`XA[M`XA</span><br></pre></td></tr></table></figure>
-<p>[M`XA<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">[M`XAvim 快捷键</span><br><span class="line">[M`XA[M`XA[M`XA[M`XA[M`XA[M`XAj	下移动</span><br><span class="line">k	上移动</span><br><span class="line">[MaXA[MaXA0	移动到行首</span><br><span class="line">[MaXA[MaXA[MaXA[MaXA$	移动到行末，1$表示当前行的行尾，2$表示当前行的下一行的行尾</span><br><span class="line">[MaXA[MaXAb	移动到单词的开始</span><br><span class="line">e	移动到单词的末尾</span><br><span class="line">G	移动到文档最后一行</span><br><span class="line">[MaZF[MaZF[MaZF[MaZFgg	移动到文档第一行</span><br><span class="line">[MaZF[MaZF[MaZFv	进入光标模式，配合移动键选中多行</span><br><span class="line">u	撤销上一次操作</span><br><span class="line">dw 删除光标所在的单词</span><br><span class="line">[Ma\I[Ma\I[Ma\I[Ma\Idd	删除光标当前行</span><br><span class="line">[Ma\IdG	删除光标后的全部文字</span><br><span class="line">y	复制当前行，会复制换行符</span><br><span class="line">[Ma\Iyy	复制当前行的内容</span><br><span class="line">yyp	复制当前行到下一行，此复制不会放到剪切板中</span><br><span class="line">nyy	复制当前开始的n行</span><br><span class="line">p 粘贴</span><br><span class="line">ddp	当前行和下一行互换位置(dd删除的内容会保存到粘贴板)</span><br><span class="line">[Ma\I[Ma\I[Ma\I[Ma\I[Ma\I[Ma\I[Ma\IJ	合并行</span><br><span class="line">[Ma\I[Ma\I[Ma\IZZ	保存离开</span><br><span class="line">[Ma\I[Ma\I[Ma\I*	向下查找同样光标的字符</span><br><span class="line">#	向上查找同样光标的字符</span><br><span class="line">/code	查找 code 一样的内容，向后</span><br><span class="line">?code	查找 code 一样的内容，向前</span><br><span class="line">n	查找下一处</span><br><span class="line">N	查找上一处</span><br><span class="line">ma	在光标处做一个名叫a的标记 可用26个标记 (a~z)</span><br><span class="line">`a	移动到一个标记a</span><br><span class="line">d`a	删除当前位置到标记a之间的内容</span><br><span class="line">:marks	查看所有标记</span><br><span class="line"></span><br><span class="line">:w filename  另存为 filename</span><br><span class="line">:jumps	历史编辑文档记录</span><br><span class="line">:set nu	设置行号显示</span><br><span class="line">:set nonu	取消行号显示</span><br><span class="line">:set	显示设置参数</span><br><span class="line">:set autoindent	自动缩排，回车与第一个非空格符对齐</span><br><span class="line">syntax on/off	根据程序语法高亮显示</span><br><span class="line">:set highlight	高亮设置查看</span><br><span class="line">:set hlsearch	查找代码高亮显示</span><br><span class="line">:nohlsearch	暂时关闭高亮显示</span><br><span class="line">:set nohlsearch	永久关闭高亮显示</span><br><span class="line">:set bg=dark	设置暗色调</span><br><span class="line">:set bg=light	设置亮色调</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">mv  移动文件   同一文件夹下重命名</span><br><span class="line">rm  删除</span><br><span class="line"><span class="keyword">cp</span></span><br><span class="line"><span class="keyword">sort</span>  排序</span><br><span class="line">unique  -<span class="keyword">c</span>（<span class="built_in">count</span>）</span><br><span class="line"><span class="built_in">mkdir</span>  -<span class="keyword">p</span>  创建多级文件夹</span><br><span class="line">sed  流式编辑器  <span class="string">'行内编辑器'</span></span><br><span class="line">awk  awk <span class="string">'&#123;BEGIN&#123;cmd&#125; &#123;cmd&#125; END&#123;cmd&#125;&#125;'</span></span><br><span class="line">wc  -<span class="keyword">l</span> 统计行数 -<span class="keyword">w</span> 统计字数 统计</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">防火墙配置</span><br><span class="line">firewall-cmd <span class="comment">--state '查看防火墙状态'</span></span><br><span class="line">systemctl status firewalld.service</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">systemctl <span class="keyword">stop</span> firewalld.service <span class="comment">#停止firewall</span></span><br><span class="line">systemctl <span class="keyword">disable</span> firewalld.service <span class="comment">#禁止firewall开机启动</span></span><br><span class="line">iptables服务命令</span><br><span class="line"><span class="comment">-- 启动服务</span></span><br><span class="line"><span class="comment"># /etc/init.d/iptables start </span></span><br><span class="line"><span class="comment"># service iptables start</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 停止服务</span></span><br><span class="line"><span class="comment"># /etc/init.d/iptables stop</span></span><br><span class="line"><span class="comment"># service iptables stop</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 重启服务</span></span><br><span class="line"><span class="comment"># /etc/init.d/iptables restart</span></span><br><span class="line"><span class="comment"># service iptables restart</span></span><br><span class="line"></span><br><span class="line"><span class="comment">-- 保存设置</span></span><br><span class="line"><span class="comment"># /etc/init.d/iptables save</span></span><br><span class="line"><span class="comment"># service iptables save</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br></pre></td><td class="code"><pre><span class="line">2. 配置Filter表防火墙</span><br><span class="line">  1. 查看iptables的配置信息</span><br><span class="line"><span class="comment"># iptables -L -n</span></span><br><span class="line"></span><br><span class="line">  1. 清除原有防火墙规则</span><br><span class="line">  ● 清除预设表filter中的所有规则链的规则</span><br><span class="line"><span class="comment"># iptables -F </span></span><br><span class="line"></span><br><span class="line">  ● 清除预设表filter中使用者自定链中的规则</span><br><span class="line"><span class="comment"># iptables -X</span></span><br><span class="line"></span><br><span class="line">  ● 保存防火墙设置</span><br><span class="line"><span class="comment"># /etc/init.d/iptables save</span></span><br><span class="line">或</span><br><span class="line"><span class="comment"># service iptables save</span></span><br><span class="line"></span><br><span class="line">  1. 设定预设规则</span><br><span class="line">-- 请求接入包丢弃</span><br><span class="line">[root@home ~]# iptables -p INPUT DROP</span><br><span class="line">-- 接受响应数据包</span><br><span class="line">[root@home ~]# iptables -p OUTPUT ACCEPT</span><br><span class="line">-- 转发数据包丢弃 </span><br><span class="line">[root@home ~]# iptables -p FORWARD DROP</span><br><span class="line"></span><br><span class="line">  1. 添加防火墙规则</span><br><span class="line">首先添加INPUT链,INPUT链的默认规则是DROP,所以我们就写需要ACCETP(通过)的链。</span><br><span class="line">  ● 开启SSH服务端口</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 22 -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p tcp --sport 22 -j ACCEPT </span><br><span class="line"></span><br><span class="line">注:如果在预设设置把OUTPUT设置成DROP策略的话，就需要设置OUTPUT规则，否则无法进行SSH连接。</span><br><span class="line">  ● 开启Web服务端口</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p tcp --sport 80 -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 80 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 开启邮件服务的25、110端口</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 110 -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 25 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 开启FTP服务的21端口</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 21 -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 20 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 开启DNS服务的53端口</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p tcp --dport 53 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 设置icmp服务</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p icmp -j ACCEPT (OUTPUT设置成DROP的话)</span><br><span class="line">[root@tp ~]# iptables -A INPUT -p icmp -j ACCEPT    (INPUT设置成DROP的话)</span><br><span class="line"></span><br><span class="line">[MaZ:[MaZ:[MaZ:[MaZ:[MaZ:  ● 允许loopback</span><br><span class="line">[MaZ:[MaZ:不然会导致DNS无法正常关闭等问题</span><br><span class="line">[MaZ:[root@tp ~]# IPTABLES -A INPUT -i lo -p all -j ACCEPT </span><br><span class="line">[MaZ:[MaZ:(如果是INPUT DROP)</span><br><span class="line">[MaZ:[root@tp ~]# IPTABLES -A OUTPUT -o lo -p all -j ACCEPT</span><br><span class="line">[MaZ:[MaZ:(如果是OUTPUT DROP)</span><br><span class="line">[MaZ:[MaZ:[MaZ:</span><br><span class="line">  ● 减少不安全的端口连接</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p tcp --sport 31337 -j DROP</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT -p tcp --dport 31337 -j DROP</span><br><span class="line"></span><br><span class="line">说明：有些特洛伊木马会扫描端口31337到31340(即黑客语言中的 elite 端口)上的服务。既然合法服务都不使用这些非标准端口来通信,阻塞这些端口能够有效地减少你的网络上可能被感染的机器和它们的远程主服务器进行独立通信的机会。此外，其他端口也一样,像:31335、27444、27665、20034 NetBus、9704、137-139（smb）,2049(NFS)端口也应被禁止。</span><br><span class="line">  ● 只允许某台主机或某个网段进行SSH连接</span><br><span class="line">只允许192.168.0.3的机器进行SSH连接</span><br><span class="line">[root@tp ~]# iptables -A INPUT -s 192.168.0.3 -p tcp --dport 22 -j ACCEPT</span><br><span class="line"></span><br><span class="line">如果允许或限制一段IP地址可用192.168.0.0/24表示192.168.0.1-255端的所有IP, 24表示子网掩码数。</span><br><span class="line">[root@tp ~]# iptables -A INPUT -s 192.168.0.0/24 -p tcp --dport 22 -j ACCEPT</span><br><span class="line"></span><br><span class="line">注意：指定某个主机或者某个网段进行SSH连接，需要在iptables配置文件中的-A INPUT -p tcp -m tcp --dport 22 -j ACCEPT</span><br><span class="line">删除，因为它表示所有地址都可以登陆.</span><br><span class="line">如果只允许除了192.168.0.3的主机外都能进行SSH连接</span><br><span class="line">[root@tp ~]# iptables -A INPUT -s ! 192.168.0.3 -p tcp --dport 22 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 开启转发功能</span><br><span class="line">在做NAT网络配置时,FORWARD默认规则是DROP时,必须开启数据包转发功能</span><br><span class="line">[root@tp ~]# iptables -A FORWARD -i eth0 -o eth1 -m state --state RELATED,ESTABLISHED -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables -A FORWARD -i eth1 -o eh0 -j ACCEPT</span><br><span class="line"></span><br><span class="line">  ● 丢弃坏的TCP包</span><br><span class="line">[root@tp ~]#iptables -A FORWARD -p TCP ! --syn -m state --state NEW -j DROP</span><br><span class="line"></span><br><span class="line">  ● 处理IP碎片数量，防止DDOS攻击，允许每秒100个</span><br><span class="line">[root@tp ~]#iptables -A FORWARD -f -m limit --limit 100/s --limit-burst 100 -j ACCEPT</span><br><span class="line"></span><br><span class="line">[MaXA[MaXA[MaXA[MaXA[MaXA  ● 设置ICMP包过滤, 允许每秒1个包, 限制触发条件是10个包</span><br><span class="line">[MaXA[MaXA[root@tp ~]#iptables -A FORWARD -p icmp -m limit --limit 1/s --limit-burst 10 -j ACCEPT</span><br><span class="line">[MaXA</span><br><span class="line">[MaXA[MaXA  ● DROP非法连接</span><br><span class="line">[MaXA[root@tp ~]# iptables -A INPUT   -m state --state INVALID -j DROP</span><br><span class="line">[root@tp ~]# iptables -A OUTPUT  -m state --state INVALID -j DROP</span><br><span class="line">[root@tp ~]# iptables -A FORWARD -m state --state INVALID -j DROP</span><br><span class="line"></span><br><span class="line">  ● 允许所有已经建立的和相关的连接</span><br><span class="line">[root@tp ~]# iptables-A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line">[root@tp ~]# iptables-A OUTPUT -m state --state ESTABLISHED,RELATED -j ACCEPT</span><br><span class="line">[root@tp ~]# /etc/rc.d/init.d/iptables save</span><br><span class="line"></span><br><span class="line">3. 配置NAT表防火墙</span><br><span class="line">  1. 查看本机关于NAT的设置情况</span><br><span class="line">[root@tp rc.d]# iptables -t<span class="built_in"> nat </span>-L</span><br><span class="line"></span><br><span class="line">  1. 清除NAT规则</span><br><span class="line">[root@tp ~]# iptables -F -t nat</span><br><span class="line">[root@tp ~]# iptables -X -t nat</span><br><span class="line">[root@tp ~]# iptables -Z -t nat</span><br><span class="line"></span><br><span class="line">  1. 添加规则</span><br><span class="line">添加基本的NAT地址转换，添加规则时，我们只添加DROP链，因为默认链全是ACCEPT。</span><br><span class="line">  ● 防止外网用内网IP欺骗</span><br><span class="line">[root@tp sysconfig]# iptables -t<span class="built_in"> nat </span>-A PREROUTING -i eth0 -s 10.0.0.0/8 -j DROP</span><br><span class="line">[root@tp sysconfig]# iptables -t<span class="built_in"> nat </span>-A PREROUTING -i eth0 -s 172.16.0.0/12 -j DROP</span><br><span class="line">[root@tp sysconfig]# iptables -t<span class="built_in"> nat </span>-A PREROUTING -i eth0 -s 192.168.0.0/16 -j DROP</span><br><span class="line"></span><br><span class="line">  ● 禁止与211.101.46.253的所有连接</span><br><span class="line">[root@tp ~]# iptables -t<span class="built_in"> nat </span>-A PREROUTING -d 211.101.46.253 -j DROP</span><br><span class="line"></span><br><span class="line">  ● 禁用FTP(21)端口</span><br><span class="line">[root@tp ~]# iptables -t<span class="built_in"> nat </span>-A PREROUTING -p tcp --dport 21 -j DROP</span><br><span class="line"></span><br><span class="line">只禁用211.101.46.253地址的FTP连接,其他连接可以进行。</span><br><span class="line">[root@tp ~]# iptables -t<span class="built_in"> nat </span>-A PREROUTING -p tcp --dport 21 -d 211.101.46.253 -j DROP</span><br></pre></td></tr></table></figure>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//linux 命令行快捷键</span></span><br><span class="line">Ctrl-A 相当于HOME键，用于将光标定位到本行最前面</span><br><span class="line"></span><br><span class="line">Ctrl-E 相当于End键，即将光标移动到本行末尾</span><br><span class="line"></span><br><span class="line">Ctrl-B 相当于左箭头键，用于将光标向左移动一格</span><br><span class="line"></span><br><span class="line">Ctrl-F 相当于右箭头键，用于将光标向右移动一格</span><br><span class="line"></span><br><span class="line">Ctrl-D 相当于Del键，即删除光标所在处的字符</span><br><span class="line"></span><br><span class="line">Ctrl-K 用于删除从光标处开始到结尾处的所有字符</span><br><span class="line"></span><br><span class="line">Ctrl-L 清屏，相当于clear命令</span><br><span class="line"></span><br><span class="line">Ctrl-R 进入历史命令查找状态，然后你输入几个关键字符，就可以找到你使用过的命令</span><br><span class="line"></span><br><span class="line">Ctrl-U 用于删除从光标开始到行首的所有字符。一般在密码或命令输入错误时常用</span><br><span class="line"></span><br><span class="line">Ctrl-H 删除光标左侧的一个字符</span><br><span class="line"></span><br><span class="line">Ctrl-W 用于删除当前光标左侧的一个单词</span><br><span class="line"></span><br><span class="line">Ctrl-P 相当于上箭头键，即显示上一个命令</span><br><span class="line"></span><br><span class="line">Ctrl-N 相当于下箭头键，即显示下一个命令</span><br><span class="line"></span><br><span class="line">Ctrl-T 用于颠倒光标所在处字符和前一个字符的位置。（目前不知道有什么作用，哪位朋友知道？）</span><br><span class="line"></span><br><span class="line">Ctrl-J 相当于回车键</span><br><span class="line"></span><br><span class="line">[MaXA[MaXA[MaXA[MaXAAlt-. 用于提取历史命令中的最后一个单词。你先执行history命令，然后再敲击此快捷键若干下，你就懂了！</span><br><span class="line">[MaXA[MaXA[MaXA</span><br><span class="line">Alt-BackSpace 用于删除本行所有的内容，基本上和Ctrl-U类似。</span><br><span class="line">[MaXA</span><br><span class="line">Alt-C 用于将当前光标处的字符变成大写，同时本光标所在单词的后续字符都变成小写。</span><br><span class="line"></span><br><span class="line">Alt-L 用于将光标所在单词及所在单词的后续字符都变成小写。</span><br><span class="line"></span><br><span class="line">Alt-U 用于将光标所在单词的光标所在处及之后的所有字符变成大写。</span><br><span class="line"></span><br><span class="line">$(linux 命令) 得到命令的执行结果，可以作为其他命令的参数</span><br><span class="line">[M`XA[M`XA[M`XA[M`XA</span><br><span class="line">[M`XA[M`XA[M`XA[M`XA[M`XA</span><br></pre></td></tr></table></figure>
+<p>[M`XA<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">M</span>`XAvim 快捷键</span><br><span class="line">[<span class="keyword">M</span>`XA[<span class="keyword">M</span>`XA[<span class="keyword">M</span>`XA[<span class="keyword">M</span>`XA[<span class="keyword">M</span>`XA[<span class="keyword">M</span>`XAj	下移动</span><br><span class="line">k	上移动</span><br><span class="line">[MaXA[MaXA0	移动到行首</span><br><span class="line">[MaXA[MaXA[MaXA[MaXA$	移动到行末，1$表示当前行的行尾，2$表示当前行的下一行的行尾</span><br><span class="line">[MaXA[MaXAb	移动到单词的开始</span><br><span class="line"><span class="keyword">e</span>	移动到单词的末尾</span><br><span class="line"><span class="keyword">G</span>	移动到文档最后一行</span><br><span class="line">[MaZF[MaZF[MaZF[MaZFgg	移动到文档第一行</span><br><span class="line">[MaZF[MaZF[MaZFv	进入光标模式，配合移动键选中多行</span><br><span class="line"><span class="keyword">u</span>	撤销上一次操作</span><br><span class="line">dw 删除光标所在的单词</span><br><span class="line">[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\Idd	删除光标当前行</span><br><span class="line">[<span class="keyword">Ma</span>\IdG	删除光标后的全部文字</span><br><span class="line">y	复制当前行，会复制换行符</span><br><span class="line">[<span class="keyword">Ma</span>\Iyy	复制当前行的内容</span><br><span class="line">yyp	复制当前行到下一行，此复制不会放到剪切板中</span><br><span class="line">nyy	复制当前开始的<span class="keyword">n</span>行</span><br><span class="line">p 粘贴</span><br><span class="line">ddp	当前行和下一行互换位置(dd删除的内容会保存到粘贴板)</span><br><span class="line">[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\IJ	合并行</span><br><span class="line">[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\IZZ	保存离开</span><br><span class="line">[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I[<span class="keyword">Ma</span>\I*	向下查找同样光标的字符</span><br><span class="line">#	向上查找同样光标的字符</span><br><span class="line">/code	查找 code 一样的内容，向后</span><br><span class="line">?code	查找 code 一样的内容，向前</span><br><span class="line"><span class="keyword">n</span>	查找下一处</span><br><span class="line"><span class="keyword">N</span>	查找上一处</span><br><span class="line"><span class="keyword">ma</span>	在光标处做一个名叫a的标记 可用26个标记 (a~z)</span><br><span class="line">`a	移动到一个标记a</span><br><span class="line"><span class="keyword">d</span>`a	删除当前位置到标记a之间的内容</span><br><span class="line">:marks	查看所有标记</span><br><span class="line"></span><br><span class="line">:w filename  另存为 filename</span><br><span class="line">:jumps	历史编辑文档记录</span><br><span class="line">:<span class="keyword">set</span> nu	设置行号显示</span><br><span class="line">:<span class="keyword">set</span> nonu	取消行号显示</span><br><span class="line">:<span class="keyword">set</span>	显示设置参数</span><br><span class="line">:<span class="keyword">set</span> autoindent	自动缩排，回车与第一个非空格符对齐</span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span>/off	根据程序语法高亮显示</span><br><span class="line">:<span class="keyword">set</span> highlight	高亮设置查看</span><br><span class="line">:<span class="keyword">set</span> hlsearch	查找代码高亮显示</span><br><span class="line">:nohlsearch	暂时关闭高亮显示</span><br><span class="line">:<span class="keyword">set</span> nohlsearch	永久关闭高亮显示</span><br><span class="line">:<span class="keyword">set</span> bg=dark	设置暗色调</span><br><span class="line">:<span class="keyword">set</span> bg=light	设置亮色调</span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<p>devtoolset <a href="https://www.softwarecollections.org/en/scls/rhscl/devtoolset-7/" target="_blank" rel="noopener">安装方法</a>(devtoolset-7 链接)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># 1. Install a package with repository for your system:</span><br><span class="line"># On CentOS, install package centos-release-scl available in CentOS repository:</span><br><span class="line"></span><br><span class="line">$ sudo yum install centos-release-scl</span><br><span class="line"></span><br><span class="line"># On RHEL, enable RHSCL repository for you system:</span><br><span class="line"></span><br><span class="line">$ sudo yum-config-manager --enable rhel-server-rhscl-7-rpms</span><br><span class="line"></span><br><span class="line"># 2. Install the collection:</span><br><span class="line"></span><br><span class="line">$ sudo yum install devtoolset-7</span><br><span class="line"></span><br><span class="line"># 3. Start using software collections:</span><br><span class="line">$ scl enable devtoolset-7 bash(临时)</span><br><span class="line">$ echo `source /opt/rh/devtoolset-7/enable` &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure></p>
+<p>devtoolset <a href="https://www.softwarecollections.org/en/scls/rhscl/devtoolset-7/" target="_blank" rel="noopener">安装方法</a>(devtoolset-7 链接)<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1. Install a package with repository <span class="keyword">for</span> your system:</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> On CentOS, install package centos-release-scl available <span class="keyword">in</span> CentOS repository:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install centos-release-scl</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> On RHEL, <span class="built_in">enable</span> RHSCL repository <span class="keyword">for</span> you system:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo yum-config-manager --<span class="built_in">enable</span> rhel-server-rhscl-7-rpms</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. Install the collection:</span></span><br><span class="line"></span><br><span class="line"><span class="meta">$</span><span class="bash"> sudo yum install devtoolset-7</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. Start using software collections:</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> scl <span class="built_in">enable</span> devtoolset-7 bash(临时)</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> <span class="built_in">echo</span> `<span class="built_in">source</span> /opt/rh/devtoolset-7/<span class="built_in">enable</span>` &gt;&gt; ~/.bashrc</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
 <ul>
 <li><p>ssh <a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">公玥认证</a></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. ssh-keygen -t rsa</span><br><span class="line">2. ssh user@host &apos;mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys&apos; &lt; ~/.ssh/id_rsa.pub</span><br><span class="line">3. ssh ubuntu@118.89.235.114</span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> ssh-keygen -t rsa</span><br><span class="line"><span class="number">2.</span> ssh user@host 'mkdir -p .ssh &amp;&amp; cat &gt;&gt; .ssh/authorized_keys' &lt; ~/.ssh/id_rsa.pub</span><br><span class="line"><span class="number">3.</span> ssh ubuntu@<span class="number">118.89</span><span class="number">.235</span><span class="number">.114</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>ssh 私钥登录</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -i 私钥文件路径 root@192.168.112.80</span><br></pre></td></tr></table></figure>
@@ -784,7 +801,7 @@
 <blockquote>
 <p>终端输出颜色<br><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\033[字背景颜色;字体颜色m字符串\033[0m</span><br><span class="line">字体背景色数值 40 - 49（可省略）</span><br><span class="line">字体颜色数值 30 - 39</span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">nslookup - 域名与ip互查</span><br><span class="line">rcp 与scp类似</span><br><span class="line">init 6 重启</span><br><span class="line">uptime 查看系统负载时间</span><br><span class="line">ipcs 进程间通信信息</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">nslookup</span> - 域名与<span class="built_in">ip</span>互查</span><br><span class="line"><span class="symbol">rcp</span> 与scp类似</span><br><span class="line"><span class="symbol">init</span> <span class="number">6</span> 重启</span><br><span class="line"><span class="symbol">uptime</span> 查看系统负载时间</span><br><span class="line"><span class="symbol">ipcs</span> 进程间通信信息</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>32位 vs 64 位</p>
 </blockquote>
@@ -920,10 +937,22 @@
                         <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
                   </span>
                 
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com/yanli" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
             </div>
           
 
           
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="images/cc-by-nc-sa.svg" alt="Creative Commons" />
+              </a>
+            </div>
           
 
           
@@ -936,6 +965,13 @@
 
       
 
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
       
 
     </div>
@@ -954,42 +990,44 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">sweepmonkli</span>
-  <div class="powered-by">
-<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  本站访客数:<span id="busuanzi_value_site_uv"></span>
-</span>
-</div>
- <!-- 
-   <span class="post-meta-divider">|</span>
+
+<!--  
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-area-chart"></i>
     </span>
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count"></span>
-   
+    <span title="Site words total count">4.5k</span>
+  -->
 </div>
+<div class="powered-by">
+<i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  本站访客数:<span id="busuanzi_value_site_uv"></span>
+</span>
+</div>
+<!--
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
- -->
-
-
- <!-- <span class="post-meta-divider">|</span>
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
-
-
- -->
+-->
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博主已码字</span>
+  <span class="post-count">博主共码4.5k字</span>
 </div>
 
         
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+</div>
+
 
 
 
@@ -1001,11 +1039,6 @@
       </div>
     </footer>
 
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
     
 
     
@@ -1051,58 +1084,58 @@
 
   
   
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+    <script type="text/javascript" src="lib/jquery/index.js?v=2.1.3"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+    <script type="text/javascript" src="lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+    <script type="text/javascript" src="lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="lib/velocity/velocity.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+    <script type="text/javascript" src="lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+    <script type="text/javascript" src="lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
   
 
   
   
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+    <script type="text/javascript" src="lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
   
 
 
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+  <script type="text/javascript" src="js/src/utils.js?v=5.1.4"></script>
 
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+  <script type="text/javascript" src="js/src/motion.js?v=5.1.4"></script>
 
 
 
   
-  
-
   
 
   
 
+  
 
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="js/src/bootstrap.js?v=5.1.4"></script>
 
 
 
@@ -1461,19 +1494,6 @@
 
 
 
-  
-  
-  
-  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
-
-  
-  
-  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
-  
-
-  <script src="/js/src/algolia-search.js?v=5.1.4"></script>
-
-
 
   
 
@@ -1587,15 +1607,30 @@
   
 
   
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
 
   
   
   
-  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+  <link rel="stylesheet" href="lib/needsharebutton/needsharebutton.css">
 
   
   
-  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+  <script src="lib/needsharebutton/needsharebutton.js"></script>
 
   <script>
     
